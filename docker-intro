@@ -19,15 +19,13 @@ HOW TO INSTALL DOCKER ON LINUX : Search installation docker on ubuntu : https://
 
 (4) Add the Docker repository to APT sources:  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
 
-(5) install from the Docker repo :  apt-cache policy docker-ce
+(5) install Docker:  sudo apt install docker-ce
 
-(6) install Docker:  sudo apt install docker-ce
+(6) Check that it’s running:  sudo systemctl status docker
 
-(7) Check that it’s running:  sudo systemctl status docker
+(7) Add user to the docker group : sudo usermod -aG docker ubuntu (ubuntu is my user) 
 
-(8) Add user to the docker group : sudo usermod -aG docker ubuntu (ubuntu is my user) 
+(8) docker login cmd : docker login 		[the login docker hub mail and password, the you can D/H search chesi image pull chesukuntavo alagey]
 
-(9) docker login cmd : docker login 		[the login docker hub mail and password, the you can D/H search chesi image pull chesukuntavo alagey]
-
-(10) docker hub search : docker search MySQL
+(19) docker hub search : docker search MySQL
 
