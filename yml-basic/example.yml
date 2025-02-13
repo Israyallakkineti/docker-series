@@ -1,0 +1,19 @@
+#Scalars
+name: israyal
+location: hyderabad
+profession: IT
+#lists
+hobbies:
+  - reading 
+  - making videos
+  - exploring tech
+#mappings  
+favoritesFoods: 
+  fruits : apple
+  Drinks: thumsup
+#multilinescalar
+whatisthisvideoabout:
+  this video discusses about
+  YAML syntax and how to use it     
+
+

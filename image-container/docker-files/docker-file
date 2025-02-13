@@ -1,0 +1,32 @@
+							WHAT IS Dockerfile :-----
+
+A Dockerfile is a text file containing instructions for building a Docker image. These instructions specify the base image, commands to run, files to copy, and other configurations necessary to create a container environment. Docker uses the Dockerfile to automate the process of building images, ensuring consistency and repeatability. 
+A Dockerfile consists of a series of commands, each representing a layer in the final image. Common commands include:
+
+FROM: defines the base image used to start the build process.
+
+RUN: Executes commands during the build process.
+
+COPY: Copies files from the host to the image.
+
+ADD: Similar to COPY, but can also extract archives.
+
+WORKDIR: Sets the path where the command, defined with CMD is to be excuted.
+
+CMD: Specifies the default command to run when the container starts.
+
+EXPOSE: Declares ports to expose and enbale network between the container and to the outside.
+
+ENV: Sets environment variables.
+
+USER : Sets the UID (or username) which is to run the container
+
+VOLUME :is used to enableaccess from the container to a directory on the host machine.
+
+MAINTAINER :defines a full name and email address of the image creator.
+
+LABEL :allows you to add a label to your docker image.
+
+
+When a Dockerfile is built, Docker executes each instruction in order, creating a new layer for each. These layers are cached, so subsequent builds can reuse them if the instructions haven't changed. This layered approach makes Docker builds efficient and allows for incremental updates.
+

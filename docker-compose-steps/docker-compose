@@ -1,0 +1,31 @@
+							WHAT IS DOCKER COMPOSE ? 
+
+
+Docker Compose is a tool for defining and running multi-container applications. It is the key to unlocking a streamlined and efficient development and deployment experience.
+
+Compose simplifies the control of your entire application stack, making it easy to manage services, networks, and volumes in a single, comprehensible YAML configuration file. Then, with a single command, you create and start all the services from your configuration file.
+
+Compose works in all environments; production, staging, development, testing, as well as CI workflows. It also has commands for managing the whole lifecycle of your application.
+
+WHAT IS DOCKER COMPOSE VERSION : the docker compose main impact the docker version it' means about the yaml/yml file read and supported by a Docker compose version
+
+
+docker up : different file names is there use " F "
+
+(1) docker compose up: Builds, (re)creates, and starts containers defined in compose.yaml. Use the -d flag to run in detached mode (in the background).
+(2) docker compose down: Stops and removes containers, networks, volumes, and images created by up.
+(3) docker compose build: Builds or rebuilds services.
+(4) docker compose ps: Lists the status of containers.
+(5) docker compose logs: Views the logs of containers.
+(6) docker compose start: Starts existing containers.
+(7) docker compose stop: Stops running containers without removing them.
+(8) docker compose restart: Restarts containers.
+(9) docker compose pause: Pauses running containers.
+(10) docker compose unpause: Unpauses paused containers.
+(11) docker compose pull: Pulls service images.
+(12) docker compose push: Pushes service images.
+(13) docker compose config: Validates and views the Compose file configuration.
+(14) docker compose version: Shows the Docker Compose version.
+(15) docker compose exec: Executes a command in a running container.
+(16) docker compose run: Runs a one-off command 
+

@@ -1,0 +1,13 @@
+WHAT IS DOCKER COMPOSE SERVICES : Docker Compose services define the individual components of a multi-container application. Each service specifies how a particular container should be built, configured, and run. These services are defined within a docker-compose.yml file, which acts as a blueprint for the entire application stack. Docker Compose then uses this file to create and manage the containers, networks, and volumes necessary for the application to function.
+
+
+A service definition in docker-compose.yml typically includes:--------
+
+(1) image: Specifies the Docker image to use for the container.
+(2) build: Defines how to build the image, if it's not available on a registry.
+(3) ports: Maps ports between the container and the host machine.
+(4) environment: Sets environment variables within the container.
+(5) volumes: Mounts volumes for persistent data storage or code sharing.
+(6) depends_on: Specifies dependencies between services, ensuring they start in the correct order.
+(7) networks: Connects the service to specific networks
+

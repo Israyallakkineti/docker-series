@@ -1,0 +1,33 @@
+							WHAT IS A DOCKER IMAGE?
+
+ A docker image is a read-only template that contains a set of instructions for creating a container that can run on the docker platform. it provides a convenient way to package up applications and preconfigured server environments, which you can use for your own [private use for or share publicly with other docker users. each docker image contain changes to the update to docker images like form image layers. 
+
+
+[antey lastet version ani 10 days before ani versions untaye kadha manam 10 days version ni change chesinapudu adhie lastest version ga change ayeendhi then alagey aa change ayeena dhani manam layer form ayeendhani anukoovachu...// EX: MySQL 5.7.41 edhie old version, latest ayeethey latest ani chuputhundhi.]
+
+
+(A) go to website : https://in.search.yahoo.com/search?fr=mcafee&type=E210IN826G0&p=hub+dockerhub.com
+
+(1) how to download images : sudo docker pull mysql
+(2) check images : docker images 
+(3) history with image : docker history (imageID)
+(3) how to container Id : docker create (ImageID)
+(4) docker check container : docker ps - a
+(5) docker run command : docker run -d --name israyal  mysql     [ditached mode d means]
+(6) docker inspect to changes container the file system : docker diff (containerId)
+(7) docker start container : docker start (containerID)
+(8) running state container check it : docker ps 
+(9) docker container login : docker exec -it (containerID) /bin/bash  	[container is a login now container data is there]
+(10) login the container create file : touch newfile.txt
+(11) add information : echo "this file login to the container" >> newfile.txt
+(12) check the information : cat newfile.txt			[exit]
+(13) check the all information : ls -ltr
+(14) docker details of the tomcat : docker inspect MySQL
+(15) docker inspect to changes container the file system : docker diff (containerId)
+(16) unresponding container CMD : docker kill (containerID)   			[kill cmd forcefully shutdown for the contaner]  
+(17) container stop : docker stop (containerID)					[it means gracefully shotdown for the container]
+(18) remove container : docker rm (containerID)
+(19) remove image : docker rmi (mysql)
+(20) remove all containers at one time : docker rm $(docker ps -a -q)
+(21) docker image build : docker build -t MySQL .
+

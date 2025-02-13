@@ -1,0 +1,55 @@
+						MULTI CONTAINER APP USING DOCKER :
+					___________________________________________________
+
+
+So we don't have any images and containers and containers running time also then 
+
+()1 create folder :mkdir docker 
+
+(2) change directory :cd docker 
+
+(3) git clone repo :git clone https://github.com/narayanacharan/mern_docker_demo.git 
+
+(4) list the repo :ls -ltr 
+
+(5) change directory :cd mern_docker_demo 
+
+(6) create docker network : docker network create library-mern-api
+
+(7) create docker volume : docker volume create mongodb-data
+
+(8) specific container you must be use the name is mongodb container : docker run -dit -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password -e PWD=/ -v mongodb-data:/data/db --name mern_library_nginx_mongodb_1 --net library-mern-api mongo
+
+(9) mongodb express container means mongodb is  managed graphical interface by use this cases : docker run -dit -p 8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=password --net library-mern-api --name mern_library_nginx_mongo-express_1 -e ME_CONFIG_MONGODB_SERVER=mern_library_nginx_mongodb_1 -e ME_CONFIG_BASICAUTH_USERNAME=admin -e ME_CONFIG_BASICAUTH_PASSWORD=admin123456 mongo-express      		...>login avadanike kuda use avuthundhi.
+
+(10) then goto port IP/A : ifconfi -then tack IP/A put them -new website - login admin and password  ( come to instance ) 
+
+(11) ls -cd server -ls 
+
+(12) build image : docker build -t mern_library_nginx_library-api . 	 ----->edhie server image lo create chesi dhanike performance ichukooni anni dhanike thechukoni work chesukuntundhi
+
+(13) docker images ----new images is there cd ..
+
+(14) cd client -ls -docker build -t mern_library_nginx_client .
+
+(15) docker images  -----new image is there cd .. -ls
+
+(16) cd nginx -ls - docker build -t mern_library_nginx_nginx .     ....> this 3 images uses for the application server connecting )
+
+(17) ls -cd server -						.......> there are 3 images connected to the server an on )  
+
+(18) cd server - docker run -dit -p 5000:5000 -e MONGO_URI=mongodb://admin:password@mern_library_nginx_mongodb_1 -e NODE_ENV=development -e PWD=/app -v "$(pwd)":/app -v "$(pwd)"/node_modules:/app/node_modules --net library-mern-api --name library_mern_nginx mern_library_nginx_library-api  
+
+[the Container will be created then this appilication API connected to the mongodb environmental variables to create by a image started ]
+
+(19) cd .. -ls -cd client (folder) - ls - docker run -d -v "$(pwd)":/app -v "$(pwd)"/node_modules:/app/node_modules --net library-mern-api --name library_mern_frontend mern_library_nginx_client              [then we can client image with started ]
+
+(20) docker ps -    [ then 4 containers will be running condition ]
+
+(21) cd client - docker run -d -p 8080:80 --name mern_library_nginx_nginx_1 --net library-mern-api mern_library_nginx_nginx  {then 5 container running state }
+
+(22) how to access to the containers web interface provider nginx container is s last container the go to new website and add IP/A give 8080 the will be # welcome to my library # is a application you can see and then go to my book click it ,go to book title and sub -autho - description -number create book click it. delete the add also.
+
+(23) docker logs [running container name ] all information about the mutli containers  
+
+

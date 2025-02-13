@@ -1,0 +1,33 @@
+								WHAT IS DOCKER USES : 						
+							____________________________________
+
+Docker is open-source platform, we can install a operating system (Os) uses for Linux, windows and mac, but you can uses for only one (OS) like Linux, then you can write code also Linux purpose. the next will be share in your operating system of the Linux code on windows there is not successful output of the code , because there is use in Linux code, that's why could not supporting and not work in windows . SO this problem solving for the DOCKER uses for the any OS to run & build, test, deploying for the DOCKER.
+
+
+WHAT IS DOCKER ENGINEE : Docker Engine is an open-source technology that allows developers to build and run applications in containers. It's a client-server application that uses a daemon process, APIs, and a command line interface (CLI).
+
+
+HOW TO INSTALL DOCKER ON WINDOWS : GO to in your laptop settings and search optional feature -more windows -windows subsystem for Linux ok and restart in your PC. -install ubuntu 20.04.5 LTS also downloaded. -the next -download desktop for windows search in new website -install docker desktop in  windows click and downloaded it -ok
+
+HOW TO INSTALL DOCKER ON LINUX : Search installation docker on ubuntu : https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+
+(1) update your existing list of packages:  sudo apt update
+
+(2) install a few prerequisite packages which let apt use packages over HTTPS:  sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+(3) Then add the GPG key for the official Docker repository to your system:  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+(4) Add the Docker repository to APT sources:  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+
+(5) install from the Docker repo :  apt-cache policy docker-ce
+
+(6) install Docker:  sudo apt install docker-ce
+
+(7) Check that it’s running:  sudo systemctl status docker
+
+(8) Add user to the docker group : sudo usermod -aG docker ubuntu (ubuntu is my user) 
+
+(9) docker login cmd : docker login 		[the login docker hub mail and password, the you can D/H search chesi image pull chesukuntavo alagey]
+
+(10) docker hub search : docker search MySQL
+

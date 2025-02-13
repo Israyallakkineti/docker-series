@@ -1,0 +1,54 @@
+							WHAT IS DOCKER-NETWORKING: ----
+
+
+Docker network is like Docker's way of saying "I’ve got your back" for containers that need to communicate with each other or the outside world. It provides a range of networking capabilities to connect Docker containers and services.
+
+There are several types of Docker networks: ---------
+
+1. Bridge Network: The default network driver. It allows containers connected to the same bridge network to communicate, ideal for applications running on multiple containers on the same host.
+
+2. Host Network: This mode removes network isolation between the container and the Docker host. The container shares the host’s networking namespace.
+
+3. None Network: For when you want a container completely isolated from others and no network connectivity.
+
+DOCKER NETWORK USES:-
+
+1. Isolated Communication: Containers connected to the same Docker network can communicate securely. This is essential for microservices architectures, where services need to talk to each other.
+
+2. Port Management: By using different networks, you can manage how your containers expose ports. This helps avoid port conflicts and allows for more flexible container deployment.
+
+3. Load Balancing: With Docker's overlay network, you can set up a Swarm cluster that distributes incoming traffic to different containers, balancing the load.
+
+4. Separation of Concerns: By using different networks for different environments (e.g., development, testing, production), you can separate concerns and ensure that your containers don't interfere with each other.
+
+5. External Connectivity: Docker networks allow your containers to access external networks and the internet, essential for services that need to fetch data or communicate with external APIs.
+
+6. Network Plugins: You can extend Docker's networking capabilities with third-party plugins, enabling advanced networking features like encrypted communication or custom routing.
+
+
+						BRIDGE CONCEPT:-----> if any container connected to the bridge.
+					___________________________
+
+Docker image run : docker run -d --name tomcat-01 -p 8080:80 tomcat 	(port is there )     }
+add docker image run : docker run -d --name mysql-02 -p 8080:80 mysql   (port is there also) } outside uses of access for the port.
+
+ifconfig : is a IP is there a copy and paste new wibesite 172.00.0.145:8080  -------there is one IP address to produced by a two ports (oka IP midha two ports and more kuda crete chesukovachu).... [if any containers is there it was unique port is given below, this ports given sapparate container application
+
+
+
+
+CREATING DOCKER NETWORKING:--
+
+(1) docker default network
+ 
+#docker network ls
+(host,bridge and none) ----this is default network created by default
+
+(2) create a docker network
+
+  docker network create  (name)
+
+(3) to view docker networks
+
+ docker network ls
+

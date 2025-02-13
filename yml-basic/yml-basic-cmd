@@ -1,0 +1,61 @@
+WHAT IS YAML OR YML ?
+						_____________________________________
+
+1. YAML ( YAML Ain't Markup language ) is a human-readable data serialization format.
+2. it is commonly used for configuration files and data exchange between system.
+3. YAML is designed to be easy to read and write, making it popular among developers and system administrators.
+
+SYNTAX :-- YAML uses indentation and colons to structure data. YAML uses indentation to indicate the nesting of elements. space are recommended over tabs; and the number of spaces for indentation should be consistent throughout the file. conventionally, two space are used for indentation.
+
+ key: value
+
+ nested_key:
+
+    - item1
+    - item2
+
+						
+SYNTAX COMMINTS : Comments in YAML start with the # character and are used to provide explanatory or descriptive text. Comments are ignored by the YAML parser.
+
+# this is a commnet
+key: value #this is another comment 
+
+SCALARS :----> scalers represent simple values like strings, numbers, Booleans and null. scalars don't have any indentation and can be expressed directly.
+
+string_key: HELO, WORLD!
+number_key: 07
+boolean_key: true
+null_key: null 
+
+LISTS :---- Lists are represented by using a hyphen (-) followed by a space. lists can contain any combination of scalar, other lists or mapping (key-value pairs).
+
+list_key:
+  
+  - item1
+
+  - item2				(multiple values used by a lists)
+
+  - sub_lists:
+      
+      - sub_item1
+      - sub_item2
+
+MAPPINGS : ---> Mappings represent key_value pairs and use a colon (:) to separate the key from the value. Mappings can be nested within each other.
+
+person:
+
+  name: israyal
+
+  age: 23
+
+
+MULTILINE SCALARS : If scalar value spans multiple lines, you can use the | character  to indicate a literal block scalar or > character to indicate a folded scalar.
+
+multiline_key:
+
+  this is a
+ 
+  multiline 
+  
+  scalar value
+

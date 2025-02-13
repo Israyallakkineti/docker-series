@@ -1,0 +1,64 @@
+							 How do Docker volumes work?
+
+
+Docker creates a volume and stores it in a directory on the Docker host. 
+The volume is mounted into a container, which mounts the directory into the container. 
+When a container writes to a path beneath a volume mount point, the changes are applied to the volume instead of the container. 
+The volume's data is stored separately from the container, so it remains available even if the container is stopped. 
+
+When to use Docker volumes?
+
+Volumes are a good choice for persisting data that needs to be available even after the container is stopped. 
+Volumes are easier to back up or migrate than bind mounts. 
+Volumes can be more safely shared among multiple containers.
+ 
+How to create a Docker volume?
+
+You can create a volume explicitly using the docker volume create command. 
+You can also specify volume driver options using the --mount option. 
+How to manage Docker volumes? 
+You can manage volumes using Docker CLI commands or the Docker API.
+
+
+
+Q: where as default location docker volumes : docker images tho manam container chesinapudu manam default da oka iD create avuthundhi dhani manam docker volumes ga chudoochu and fine dhani manam docker default location erkkada untundhi antey /var/lib/docker/volumes lo untundhi dhini manam ela chudalli antey.....? -docker volume ls ani koodithey manaku aa ID's kanapaduthaye then next -docker volume inspect ID -dhani location vastundhi -cd /var/lib/docker/volumes/-ls -cd ID -ls -cd _data ela vatilo manam chesina work vastundhi ??
+
+(1) docker volume create : docker volume create my_volume
+
+(2) list of the volumes : docker volume ls
+
+(3) display with detailes : docker volume inspect my_volume
+
+(4) remove volume : docker volume rm my_volume 
+
+(5) removes all unused volume : docker volume purne       ----> imp
+
+(6) use one container mapping only : docker run -it -name=my_container --mount source=my_volume,destination=/data centos (manalni container lopalike thisukoni pothundhi) 
+
+(7) ls -akkadata data aney file untundhi -cd data -touch testfile.txt  -echo "test data" >>testfile.txt -cat testfile.txt -exit (container lopala manam code rasam) 
+
+(8) we can where store the data is there location : cd var/lib/docker/volumes/my_volume/_data -ls -testfile.txt undalli -cat testfile.txt
+
+(9) docker runing containers : docker ps -a
+
+(9) remove container : docker rm my_container 		---> container matramey remove chestundhi kani volume alaney untundhi )
+
+(10) check docker volumes : docker volume ls	        ....> docker volumes presistance ga untaye manam container lekunda kuda volumes use chesukovachu manam ichina data alaney untundhi )
+							_____| dhanikoosam malli manam container create chesi use chesukovadhu mana volume ko unna data tho connect kuda cheyochu)
+
+(11)  create another container same destination anad mapping : docker run -it --name=my_container02 --mount source=my_volume,destination=/data centos  	---ls -cd data -ni file untundhi.
+
+(12) At the same volume share by another container :  docker run -it --volume my_container02 --name my_contaniner03 centos /bin/bash    ....> [data share the another container] ""  "" .
+
+(13) another method also is there :  docker run -it --name my_container04 -v testvoll:/data centos   ..../ same data is there ??
+
+(14) mount created by 3 ways : docker run -it --name=my_container --mount source=my_volume,destination=/data centos   (or)
+			       docker run -it --name my_container04 -v testvoll:/data centos			      (or)
+			       docker run -it --volume my_container02 --name my_contaniner03 centos /bin/bash 
+
+          
+
+				the dynamic volume with container create by mount :
+
+(1)....> without container create  - mkdir docker_vol -cd docker_vol -pwd -mkdir files -cd files -pwd -touch file.txt -echo "newfile" >> file.txt -cat file.txt - we told that present working directory lo naku kavalli ani and container kuda create chey anni - command vachi -docker run -t --name my_container05 -v "$(pwd)":/data1 centos -ls -cd data1 -ls -files.txt -cat files.txt - docker rm (containerID).
+

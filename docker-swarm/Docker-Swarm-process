@@ -1,0 +1,41 @@
+					INSTALLATION PROCESS :----
+				________________________________________
+
+(A) Managed 												(B) worker-node
+
+(1) sudo apt-get install update 									(2) sudo apt-get install update 
+(3) sudo apt install docker.io -y									(4) sudo apt install docker.io -y
+(5) docker swarm init --advertise-addr (PU/IP)	tocken is ready copy    				(6) tocken paste it. 
+(7) docker node ls -it means leader managed and worker also there     					(20) docker swarm leave  
+(8) docker service create --name helloworld alpine ping docker.com [individual create image]
+(9) docker service ls    [service create and replicas created ]
+(10) docker ps           [indivudual create running container]
+(11) docker inspect (imageID)  details of the service replicas
+(12) ls -cd mern_ folder is use - docker stack deploy -c docker-compose.yml mern_stack      
+(13) docker stack ls       [stack meand combination of services,volumes and network]
+(14) SWARPIT graphical interface created  
+
+docker run -it --rm \
+  --name swarmpit-installer \
+  --volume /var/run/docker.sock:/var/run/docker.sock \
+swarmpit/install:1.9       
+
+[INTER 3 TIMES AND USER,PASS]
+
+(15) PU/IP 888 goto new website port put it application is ready 
+(16) docker stack ls   [ you see the services list ]
+(17) docker stack rm mern_stack    ( remove )
+(18) docker stack rm swarmpit 
+(19) docker node ls                ( node list managed and worker_node is there )
+(21) docker node ls                ( remove worker_node ) 
+(22) docker swarm leave --force    ( remove managed_node also )
+(23) docker swarm ls               (docker swarm is no more and cluster also no there)
+
+
+[
+Stack - combination of one or more services, networks, vols
+Services - combination of one or more tasks
+Tasks - task is a definition to deploy a container
+Container - container is an instance of task
+]
+

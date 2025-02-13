@@ -1,0 +1,62 @@
+						     DOCKER SWARM : 
+						___________________________
+
+(1) WHAT IS DOCKER SWARM : Docker Swarm is a tool that manages and schedules Docker containers across a cluster of machines. It's an open-source platform that's built into the Docker container platform. 
+
+(2) HOW IS IT WORKS :A Docker Swarm cluster is made up of multiple Docker nodes, including at least one manager node and multiple worker nodes. 
+The manager node controls the cluster's activities. 
+The swarm manager monitors the cluster state and adjusts the number of tasks running on each node to maintain the desired state. 
+Docker Swarm uses a declarative model, so you define the desired state of a service and Docker maintains it.
+
+(3) WHAT IS DIFFERENCE BETWEEN DOCKER AND DOCKER SWARM : Docker is a tool used to create and manage individual containers, while Docker Swarm is a container orchestration tool that allows you to manage and scale a cluster of Docker containers across multiple hosts.
+
+(4) WHAT IS DIFFERENCE BETWEEN KUBERNETES AND DOCER SWARM : Docker Swarm is a lightweight, easy-to-use orchestration tool with limited offerings compared to Kubernetes. In contrast, Kubernetes is complex but powerful and provides self-healing, auto-scaling capabilities.
+
+(5) WHY USED DOCKER SWARM : Docker Swarm is used to manage and orchestrate a cluster of Docker containers across multiple nodes, allowing for easy deployment, scaling, and load balancing of containerized applications, particularly beneficial for situations where high availability and fault tolerance are crucial, all while leveraging the familiar Docker ecosystem and commands.
+
+
+						     Stacks :--
+					    ________________________
+
+(1) In Docker Swarm, a stack is a way to define and manage a group of services that are deployed together as a single unit. It allows you to define an application's services, networks, and volumes in a declarative YAML file called a Compose file.
+
+(2) A stack is created and deployed using the docker stack deploy command, which takes a Compose file as input and deploys the defined services onto the Docker Swarm cluster.
+
+(3) When deploying a stack, Docker Swarm orchestrates the creation and management of the services, ensuring that they are distributed across the cluster's nodes according to the defined constraints and availability requirements. It handles scaling, load balancing, service discovery, and other orchestration tasks for the services within the stack.
+
+
+						Services and Tasks :------
+					________________________________________
+
+(1) Docker containers are launched using services.
+
+(2) There are two types of service deployments, replicated and global.
+
+(3) For a replicated service, you specify the number of identical tasks you want to run. For example, you decide to deploy an HTTP service with three replicas, each serving the same content.
+
+(4) A global service is a service that runs one task on every node. There is no pre-specified number of tasks. Each time you add a node to the swarm, the orchestrator creates a task and the scheduler assigns the task to the new node. Good candidates for global services are monitoring agents, anti-virus scanners or other types of containers that you want to run on every node in the swarm
+
+
+						Services and Tasks :----
+					______________________________________
+
+A task is the atomic unit of scheduling within a swarm. When you declare a desired service state by creating or updating a service, the orchestrator realizes the desired state by scheduling tasks. For instance, you define a service that instructs the orchestrator to keep three instances of an HTTP listener running at all times.
+
+The orchestrator responds by creating three tasks. Each task is a slot that the scheduler fills by spawning a container. The container is the instantiation of the task. If an HTTP listener task subsequently fails its health check or crashes, the orchestrator creates a new replica task that spawns a new container.
+
+						Docker Swarm Features :----
+					_______________________________________
+
+(1) Centralized access: Swarm makes it very easy for teams to access and manage the environment
+
+(2) High security: Any communication between the manager and client nodes within the Swarm is highly secure
+
+(3) Autoload balancing: There is autoload balancing within
+
+(4) your environment, and you can script that into how you write out and structure the Swarm environment
+
+(5) High scalability: Load balancing converts the Swarm environment into a highly scalable infrastructure
+
+(6) Roll-back a task: Swarm allows you to roll back environments to previous safe environments
+
+
